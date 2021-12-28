@@ -1,0 +1,307 @@
+@font-face {
+    font-family: poppins;
+    src: url('/assets/font/poppins/Poppins-Regular.ttf');
+    font-weight: 400;
+  }
+@font-face {
+    font-family: poppins;
+    src: url('/assets/font/poppins/Poppins-SemiBold.ttf');
+    font-weight: 600;
+  }
+@font-face {
+    font-family: poppins;
+    src: url('/assets/font/poppins/Poppins-Bold.ttf');
+    font-weight: 700;
+  }
+@font-face {
+    font-family: poppins;
+    src: url('/assets/font/poppins/Poppins-ExtraBold.ttf');
+    font-weight: 800;
+  }
+@font-face {
+    font-family: poppins;
+    src: url('/assets/font/poppins/Poppins-Black.ttf');
+    font-weight: 900;
+  }
+
+body{
+    font-family: poppins;
+    font-weight: 600;
+}
+
+.hero-section{
+  background-color: #1b7ced;
+}
+
+.hero-title{
+  font-family: poppins;
+  font-weight: 700;
+  color:white;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.search-bar{
+  max-width: 900px;
+  margin:auto;
+}
+
+.search-bar-filter{
+  max-width: 900px;
+  margin:auto;
+}
+
+.search-bar-secondary{
+  box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 6px 0px;
+}
+
+
+/* form style */
+.input-group>.form-select{
+  max-width:140px;
+}
+
+.form-select{
+  font-family: poppins;
+  font-weight: 600;
+  color:#1e90ff;
+}
+
+.form-select option{
+  font-family: poppins;
+  font-weight: 400;
+  color:black;
+}
+
+.form-select option:hover{
+  color: #000;
+}
+
+.form-sort{
+  font-family: poppins;
+  font-weight: 400;
+  color:black;
+  font-size: 14px;
+}
+
+/* end form style */
+
+.section-title{
+  font-family: poppins;
+  font-weight: 700;
+  color:rgba(34, 32, 44, 0.932)
+}
+
+.section-subtitle{
+  font-family: poppins;
+  font-weight: 400;
+  color:rgba(34, 32, 44, 0.932)
+}
+
+.properti-premium-desc{
+  background: white;
+  color:black;
+  bottom: auto;
+  left: auto;
+}
+
+.properti-premium-price{
+  color:black;
+  left: 0;
+  bottom: 0;
+  top: auto;
+}
+
+.search-query{
+  font-family: poppins;
+  font-weight: 600;
+  color:rgba(34, 32, 44, 0.932)
+}
+
+.desc-price{
+  background: white;
+  display: inline;
+  padding: 0.7rem;
+  border-radius: 3cm;
+}
+
+.desc-title{
+  font-family: poppins;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.desc-place{
+  font-family: poppins;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.desc-detail{
+  font-family: poppins;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.listing-title{
+  font-family: poppins;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 0.55cm;
+  color: #1b7ced;
+}
+
+.listing-place{
+  font-family: poppins;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.listing-price{
+  font-family: poppins;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.listing-desc{
+  font-family: poppins;
+  font-weight: 400;
+  font-size: 13px;
+  margin-top:10px;
+  margin-bottom:0px
+}
+
+.listing-img{
+  height:450px;
+  width:auto;
+}
+
+.listing-card{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px 1px; border:none
+}
+
+.profile-pic{
+  width:100px;
+  height:100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.profile-name{
+  margin-bottom: 0;
+  font-size: 18px;
+}
+
+.profile-title{
+  font-family: poppins;
+  font-weight: 400;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
+.card-img{
+  object-fit: cover;
+  height:100%;
+}
+
+.card-footer{
+  background:white;
+  border:none
+}
+
+.card-body{
+  padding-bottom:0
+}
+
+.kategori-text{
+  font-family: poppins;
+  font-weight: 600;
+  font-size: 14px;
+  color:white;
+}
+
+.informasi-properti{
+  line-height: 0.7cm;
+}
+
+.informasi-properti label{
+  font-family: poppins;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(150, 150, 150);
+}
+
+/* btn and bootstrap override */
+.bg-light-blue{
+  background: #1e8fff28
+}
+
+.bg-blue{
+  background: #1b7ced
+}
+
+.btn-search{
+  color:#1768c5;
+  border-left:1px solid lightgrey;
+  font-family: poppins;
+  font-weight: 600;
+}
+
+.btn-whatsapp{
+  background:#25d366;
+  border:solid 1px #25d366;
+  color: white;
+  font-size:14px
+}
+
+.btn-whatsapp:hover{
+  background:#27a857;
+  color: white;
+}
+
+.btn-email{
+  font-size:14px
+}
+
+.btn-checkbox{
+  min-width: 45px;
+}
+
+.btn-checkbox:hover{
+  background: transparent;
+  color:blue;
+  border-color: blue;
+}
+
+.form-filter{
+  padding-left:0
+}
+
+.form-check-input:focus{
+  box-shadow: none;
+}
+
+.btn:focus, .btn:active{
+  box-shadow: none;
+  transition: 0.75;
+}
+
+.breadcrumb-item a{
+  text-decoration: none;
+}
+
+/* etc */
+
+/* remove arrow on number input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+

@@ -1,0 +1,22 @@
+
+/* the slides */
+  .slick-slide {
+    margin: 0 10px;
+  }
+  /* the parent */
+  .slick-list {
+    margin: 0px;
+  }
+
+  .slick-prev:before, .slick-next:before {
+    color: #000137 !important;
+    background-color: white;
+    display:none;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .slick-prev:before, .slick-next:before {
+      font-size: 25px;
+      display:block;
+    }
+  }
