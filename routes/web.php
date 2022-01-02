@@ -16,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index');
 
 Route::get('/beli', 'SearchController@beli');
+Route::get('/sewa', 'SearchController@sewa');
 
 Route::get('/properti/{id}', 'ListingController@show');

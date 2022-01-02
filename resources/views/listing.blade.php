@@ -6,8 +6,8 @@
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
           <ol class="breadcrumb" style="font-size: 14px">
             <li class="breadcrumb-item"><a href="/">Beranda</a></li>
-            <li class="breadcrumb-item"><a href="/beli">Beli</a></li>
-            <li class="breadcrumb-item"><a href="/beli">{{Request::get('properti') == NULL ? 'Properti Dijual' : ucfirst(Request::get("properti")) . " Dijual"}}</a></li>
+            <li class="breadcrumb-item"><a href="{{$listing['TipePenjualan'] == 'jual'? '/beli' : '/sewa'}}?properti=semua">{{$listing['TipePenjualan'] == 'jual'? 'Beli' : 'Sewa'}}</a></li>
+            <li class="breadcrumb-item"><a href="{{$listing['TipePenjualan'] == 'jual' ? '/beli' : '/sewa'}}?properti={{strtolower($listing['jenis_listing'])}}">{{ucfirst($listing['jenis_listing'])}} {{$listing['TipePenjualan'] == 'jual' ? 'Dijual' : 'Disewakan'}}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{$listing['id_properti']}}</li>
           </ol>
         </nav>
@@ -27,7 +27,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-8">
-                <h1 class="listing-price mb-2" style="font-size:36px">Rp. {{number_format($listing['harga'],0,',','.')}}</h1>
+                <h1 class="listing-price mb-2" style="font-size:36px">Rp. {{number_format($listing['harga'],0,',','.')}} {{$listing['TipePenjualan'] == 'sewa' ? '/ Tahun' : ''}}</h1>
                 <div class="row desc-detail" style="font-size: 18px">
                     <p><i class="fas fa-bed"></i> {{$listing['kamar']}}
                     <i class="fas fa-bath ps-3"></i> {{$listing['kamar_mandi']}}
@@ -43,7 +43,13 @@
                     <div class="col-md-6 col-sm-6">
                         <p><label>ID Properti :</label><br>{{$listing['id_properti']}}</p>
                         <p><label>Luas :</label><br>{{$listing['luas']}} m<sup>2</sup></p>
-                        <p><label>Kamar Tidur :</label><br>{{$listing['kamar']}} Kamar</p>
+                        <p><label>Kamar Tidur :</label><br>
+                        @if($listing['kamar_mandi'] > 0)
+                        {{$listing['kamar_mandi']}} Kamar
+                        @else
+                        -
+                        @endif    
+                        </p>
                         <p><label>Garasi : </label><br>
                         @if($listing['garasi'] > 0)
                         {{$listing['garasi']}} Mobil
@@ -56,6 +62,7 @@
                         <p><label>Jenis Properti :</label><br>{{$listing['jenis_listing']}}</p>
                         <p><label>Sertifikat Tanah :</label><br>{{$listing['statusTanah']}}</p>
                         <p><label>Kamar Mandi :</label><br>{{$listing['kamar_mandi']}} Kamar Mandi</p>
+                        <p><label>Tipe Penjualan :</label><br>{{ucfirst($listing['TipePenjualan'])}}</p>
                     </div>
                 </div>
 
@@ -93,14 +100,14 @@
                                 <img class="img-fluid profile-pic" src="/assets/user-placeholder.jpg" alt="">
                             </div>
                             <div class="col-8">
-                                <p class="profile-name">Rafi Chandra</p>
+                                <p class="profile-name">{{$marketing['name']}}</p>
                                 <p class="profile-title">Agen Properti</p>
                             </div>
                         </div>
                         <hr>
                         <div class="row">
-                            <p class="mb-0"><i class="fab fa-whatsapp me-2"></i> 0812872382781</p>
-                            <p><i class="fas fa-envelope me-2"></i> rafi.chandra@mail.com</p>
+                            <p class="mb-0"><i class="fab fa-whatsapp me-2"></i> {{$marketing['phone_number']}}</p>
+                            <p><i class="fas fa-envelope me-2"></i> {{$marketing['email']}}</p>
                         </div>
                         <div class="row mb-2">
                             <div class="col-6 px-1">

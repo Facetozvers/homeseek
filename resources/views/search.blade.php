@@ -30,11 +30,11 @@
 <section class="breadcrumb-section">
     <div class="container pt-4">
         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Beranda</a></li>
-            <li class="breadcrumb-item"><a href="/beli">Beli</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{Request::get('properti') == NULL ? 'Properti Dijual' : ucfirst(Request::get("properti")) . " Dijual"}}</li>
-          </ol>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Beranda</a></li>
+                <li class="breadcrumb-item"><a href="{{request()->is('beli') ? '/beli' : '/sewa'}}?properti=semua">{{request()->is('beli') ? 'Beli' : 'Sewa'}}</a></li>
+                <li class="breadcrumb-item active">{{Request::get('properti') == 'semua' ? 'Properti' : ucfirst(Request::get('properti'))}} {{request()->is('beli') ? 'Dijual' : 'Disewakan'}}</a></li>
+            </ol>
         </nav>
     </div>
 </section>
@@ -45,13 +45,11 @@
         <div class="row">
             <h4 class="search-query">{{Request::get('q')}}</h4>
             <div class="col-4">
-                <p class="my-2">{{count($listings)}} Properti Ditemukan</p>
+                <p class="my-2">{{count($listings)}} Properti Ditemukan (Gambar tidak menunjukkan keadaan rumah sebenarnya)</p>
             </div>
             <div class="col-2 d-flex ms-auto">
                 <select class="form-select form-sort">
-                    <option selected value="rumah">Paling Sesuai</option>
-                    <option value="apartemen">Harga Tertinggi</option>
-                    <option value="apartemen">Harga Terendah</option>
+                    <option selected>Paling Sesuai</option>
                 </select>
             </div>
             <div class="col-lg-1 d-flex d-md-none">  
@@ -72,7 +70,7 @@
                 <input type="hidden" name="properti" value="{{Request::get('properti')}}">
                 <input type="hidden" name="q" value="{{Request::get('q')}}">
 
-                <p>Filter <span class="badge bg-secondary">2</span></p>
+                <p>Filter</p>
                 <div class="accordion" id="accordionFilter">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="filter-1">
@@ -230,7 +228,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12 col-md-6">
-                                        <p class="listing-price">Rp. {{number_format($listing['harga'],0,',','.')}}</p>
+                                        <p class="listing-price">Rp. {{number_format($listing['harga'],0,',','.')}} {{$listing['TipePenjualan'] == 'sewa' ? '/ Tahun' : ''}}</p>
                                     </div>
                                     <div class="col-12 col-md-6">
                                         <a href="/properti/{{$listing['id_properti']}}" class="btn btn-outline-primary w-100">Lihat Detail</a>
