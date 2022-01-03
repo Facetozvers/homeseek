@@ -73,6 +73,9 @@
                     <div class="col-md-3 col-sm-6 {{$listing['listing_facilities']['swimming_pool'] == 1 ? 'd-block' : 'd-none'}}">
                         <p><i class="fas fa-swimming-pool me-2"></i>Kolam Renang</p>
                     </div>
+                    <div class="col-md-2 col-sm-6 {{$listing['listing_facilities']['garden'] == 1 ? 'd-block' : 'd-none'}}">
+                        <p><i class="fas fa-seedling me-2"></i>Garden</p>
+                    </div>
                     <div class="col-md-2 col-sm-6 {{$listing['listing_facilities']['carport'] == 1 ? 'd-block' : 'd-none'}}">
                         <p><i class="fas fa-parking me-2"></i>Carport</p>
                     </div>
